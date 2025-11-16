@@ -54,6 +54,7 @@
                 font-weight: 700;
                 letter-spacing: -2.0px;
                 line-height: 0.9;
+                overflow-wrap: break-word;
             }
             h2 {
                 font-family: var(--primaryFont);
@@ -86,11 +87,10 @@
                 font-family: var(--primaryFont);
             }
             
-            /* BUTTON STYLES */
+            /* BUTTON STYLES - RECTANGULAR */
             .btn {
                 padding: 0.75rem 1.5rem;
                 border: none;
-                border-radius: 25px;
                 font-size: var(--paragraphSmall);
                 cursor: pointer;
                 font-weight: 300;
@@ -112,7 +112,6 @@
                 background-color: rgba(46, 46, 46, 0.1);
                 opacity: 0;
                 transition: opacity 0.2s ease;
-                border-radius: 25px;
             }
             
             .btn:hover::after {
@@ -143,12 +142,9 @@
                 color: var(--themeDarkGray);
             }
             
-            /* HEADER */
+            /* HEADER - FIXED BLUR ISSUE */
             .site-header {
                 font-family: var(--primaryFont);
-                background-color: color-mix(in srgb, var(--themeDarkBlue) 50%, transparent);
-                backdrop-filter: blur(16px);
-                -webkit-backdrop-filter: blur(16px);
                 color: var(--themeWhite);
                 display: flex;
                 justify-content: space-between;
@@ -160,6 +156,20 @@
                 z-index: 1000;
                 box-sizing: border-box;
                 transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+            
+            /* Blur effect container */
+            .site-header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: color-mix(in srgb, var(--themeDarkBlue) 50%, transparent);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                z-index: -1;
             }
             
             .site-header.hidden {
@@ -253,58 +263,57 @@
             }
             
             @media (max-width: 768px) {
-    .site-header ul {
-        display: none;
-        flex-direction: column;
-        background-color: var(--themeDarkBlue);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100%;
-        padding: 0;
-        opacity: 0;
-        transform: translateY(-10px);
-        border-radius: 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    
-    .site-header ul.show {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-        animation: slideDown 0.3s ease forwards;
-    }
-    
-    .site-header ul li {
-        margin: 0;
-        text-align: center;
-    }
-    
-    .site-header ul li a {
-        display: block;
-        padding: 1.2rem 1.5rem;
-        transition: background-color 0.2s ease;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
-        font-size: 1.1rem;
-    }
-    
-    /* Remove underline effects completely for mobile */
-    .site-header ul li a::after {
-        display: none; /* Completely remove the underline element */
-    }
-    
-    /* Row highlight on hover - keep this only */
-    .site-header ul li a:hover {
-        background-color: color-mix(in srgb, var(--themeWhite) 10%, transparent);
-    }
-    
-    .menu-toggle {
-        display: flex;
-    }
-}
+                .site-header ul {
+                    display: none;
+                    flex-direction: column;
+                    background-color: var(--themeDarkBlue);
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    padding: 0;
+                    opacity: 0;
+                    transform: translateY(-10px);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                }
+                
+                .site-header ul.show {
+                    display: flex;
+                    opacity: 1;
+                    transform: translateY(0);
+                    animation: slideDown 0.3s ease forwards;
+                }
+                
+                .site-header ul li {
+                    margin: 0;
+                    text-align: center;
+                }
+                
+                .site-header ul li a {
+                    display: block;
+                    padding: 1.2rem 1.5rem;
+                    transition: background-color 0.2s ease;
+                    width: 100%;
+                    box-sizing: border-box;
+                    text-align: center;
+                    font-size: 1.1rem;
+                }
+                
+                /* Remove underline effects completely for mobile */
+                .site-header ul li a::after {
+                    display: none; /* Completely remove the underline element */
+                }
+                
+                /* Row highlight on hover - keep this only */
+                .site-header ul li a:hover {
+                    background-color: color-mix(in srgb, var(--themeWhite) 10%, transparent);
+                }
+                
+                .menu-toggle {
+                    display: flex;
+                }
+            }
             
             @keyframes slideDown {
                 from {
@@ -733,7 +742,7 @@
             <div class="section-1-content">
                 <h1 class="fade-in-element">Turning cash value into opportunity</h1>
                 <p class="fade-in-element">Institutional-grade, short-term notes backed by the cash value of high-quality life insurance policies.</p>
-                <button class="fade-in-element btn btn-green">Learn More</button>
+                <button class="fade-in-element btn btn-green">Learn More →</button>
             </div>
         </section>
         
@@ -749,7 +758,7 @@
                 <p class="fade-in-element">
                 Given our relationships with a national network of agents and brokers, we can source large volumes of quality collateral.
                 </p>
-                <button class="fade-in-element btn btn-light-gray">Learn More About Our Bond Offering</button>
+                <button class="fade-in-element btn btn-light-gray">Learn More About Our Bond Offering →</button>
             </div>
         </section>
         
