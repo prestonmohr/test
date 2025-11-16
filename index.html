@@ -6,9 +6,10 @@
   <title>Meridian Holdings Group</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Book+Antiqua:wght@300;400;700&display=swap');
 
-    /* COLOR VARIABLES */
     :root {
+      /* COLOR VARIABLES */
       --themeWhite: #FFFFFF;
       --themeDarkGray: #2E2E2E;
       --themeLightGray: #F4F4F4;
@@ -18,10 +19,15 @@
       /* BACKGROUND VARIABLES */
       --background1: url('assets/images/backgrounds/nature-4564618_1920.jpg');
       --background2: url('assets/images/backgrounds/clouds-1835885_1920.jpg');
+
+      /* GLOBAL FONTS */
+      --primaryFont: 'Helvetica', sans-serif;
+      --secondaryFont: 'Book Antiqua', serif;
       
       /* FONT SIZE VARIABLES */
       --headingLarge: 3.5rem;
       --headingMedium: 2.5rem;
+      --headingSmall: 1.2rem;
       --paragraphBig: 1.25rem;
       --paragraphSmall: 1.0rem;
     }
@@ -30,12 +36,30 @@
       margin: 0;
       background-color: var(--themeDarkGray);
       color: var(--themeDarkGray);
-      font-family: Helvetica, sans-serif;
+      /*font-family: var(--primaryFont);*/
       font-weight: 300;
+    }
+
+    h1 {
+      font-family: var(--primaryFont)
+    }
+    h2 {
+      font-family: var(--primaryFont)
+    }
+    h3 {
+      font-family: var(--primaryFont)
+    }
+    p {
+      font-family: var(--secondaryFont)
+    }
+
+    button {
+      font-family: var(--secondaryFont);
     }
 
     /* HEADER */
     .site-header {
+      font-family: var(--secondaryFont);
       background-color: rgba(46, 46, 46, 0.5);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -551,7 +575,7 @@
       padding: 0.75rem 1rem;
       border: 1px solid #ddd;
       border-radius: 4px;
-      font-family: Helvetica, sans-serif;
+      font-family: primaryFont;
       font-size: var(--paragraphSmall);
       box-sizing: border-box;
       /* FIX: Better padding and line-height to prevent text cutoff */
@@ -640,7 +664,7 @@
 
     .footer-column h3 {
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: headingSmall;
       margin-top: 0rem;
       margin-bottom: 1.5rem;
       color: var(--themeWhite);
@@ -648,7 +672,7 @@
 
     .footer-column p, .footer-column a {
       font-weight: 300;
-      font-size: 0.95rem;
+      font-size: paragraphSmall;
       line-height: 1.6;
       color: rgba(255, 255, 255, 0.7);
       margin-bottom: 0.8rem;
@@ -679,7 +703,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.9rem;
+      font-size: paragraphSmall;
       color: rgba(255, 255, 255, 0.5);
     }
 
