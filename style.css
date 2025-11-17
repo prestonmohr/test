@@ -480,7 +480,6 @@ button {
 
 .section-2 p {
     font-size: var(--paragraphBig);
-    font-weight: 300;
     margin-bottom: 2rem;
 }
 
@@ -546,7 +545,6 @@ button {
 }
 
 .feature-card p {
-    font-weight: 300;
     font-size: var(--paragraphSmall);
     color: var(--themeDarkGray);
     margin: 0;
@@ -611,7 +609,6 @@ button {
 }
 
 .contact-info h3 {
-    font-size: var(--headingMedium);
     color: var(--themeDarkBlue);
     letter-spacing: -2px;
     margin-top: 0rem;
@@ -982,7 +979,6 @@ button {
 }
 
 .structure-item p {
-    font-weight: 300;
     font-size: var(--paragraphSmall);
     color: var(--themeDarkGray);
     margin: 0;
@@ -1303,7 +1299,6 @@ button {
 .team-member h3 {
     color: var(--themeDarkBlue);
     margin-bottom: 0.5rem;
-    font-size: var(--headingMedium);
     text-align: left;
 }
 
@@ -1391,11 +1386,10 @@ button {
     display: block;
 }
 
-.team-member-info h1 {
+.team-member-info h2 {
     margin-bottom: 0.5rem;
     margin-top: 0rem;
     color: var(--themeDarkBlue);
-    font-size: var(--headingLarge);
 }
 
 .team-member-title {
