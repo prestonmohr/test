@@ -198,7 +198,6 @@ button {
 
 /* Active/Click state */
 .btn:active {
-    transform: scale(0.98);
     transition: transform 0.1s ease;
 }
 
@@ -995,16 +994,20 @@ button {
     background-color: color-mix(in srgb, var(--themeLightBlue) 10%, transparent);
     padding: 2.5rem;
     border-radius: 12px;
-    margin: 3rem 0;
     text-align: center;
     border-left: 4px solid var(--themeGreenAccent);
 }
 
 .investment-highlight h3 {
-    font-size: var(--headingMedium);
     color: var(--themeDarkBlue);
     margin-bottom: 1rem;
     font-style: italic;
+}
+
+.investment-highlight h4 {
+    color: var(--themeLightBlue);
+    margin-bottom: 1rem;
+    text-align: right;
 }
 
 .investment-highlight p {
